@@ -1,6 +1,6 @@
 ---
-title: ""Nice""
-author: "Alex Anderson"
+title: Nice
+author: Alex Anderson
 date: "2015-02-13T01:24:28.779Z"
 layout: post
 path: "/nice/"

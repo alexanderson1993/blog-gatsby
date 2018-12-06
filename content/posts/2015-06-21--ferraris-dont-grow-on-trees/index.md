@@ -1,5 +1,5 @@
 ---
-title: ""Ferraris don't grow on trees""
+title: "Ferraris don't grow on trees"
 author: "Alex Anderson"
 date: "2015-06-22T02:42:10.433Z"
 layout: post
