@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Link } from "gatsby";
 
 const Item = props => {
-  const { theme, item: { label, to, icon: Icon } = {}, onClick } = props;
+  const { theme, item: { label, to } = {}, onClick } = props;
 
   return (
     <React.Fragment>
@@ -14,7 +14,7 @@ const Item = props => {
           onClick={onClick}
           data-slug={to}
         >
-          {Icon && <Icon />} {label}
+          {label}
         </Link>
       </li>
 
@@ -56,9 +56,12 @@ const Item = props => {
               color: ${theme.color.neutral.white};
             }
 
+            :global(.homepage):not(.fixed) & :global(a:hover) {
+              color: ${theme.color.brand.light};
+            }
+
             :global(a:hover) {
               color: ${theme.color.brand.primary};
-              background: color(white alpha(-60%));
             }
 
             :global(svg) {

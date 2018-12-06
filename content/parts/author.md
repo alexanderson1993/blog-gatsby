@@ -2,4 +2,4 @@
 title: author
 ---
 
-**Mr. Gatsby** Proin ornare ligula eu tellus tempus elementum. Aenean [bibendum](/) iaculis mi, nec blandit lacus interdum vitae. Vestibulum non nibh risus, a scelerisque purus. Blandit lacus interdum vitae. Vestibulum non nibh risus, a scelerisque purus.
+**Alex Anderson** is a husband, student, React web developer, Latter-day Saint, amateur rock climber, hobby chef, and spaceship enthusiast. He enjoys learning new things, teaching inspiring things, building cool things, and doing fun things.

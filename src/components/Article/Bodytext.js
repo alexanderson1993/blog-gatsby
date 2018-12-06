@@ -55,12 +55,23 @@ const Bodytext = props => {
             overflow: hidden;
             border: 1px solid ${theme.line.color};
           }
+          :global(blockquote) {
+            border-left: solid 5px ${theme.color.neutral.gray.c};
+            margin-left: 5px;
+            padding-left: 10px;
+          }
           :global(code.language-text) {
-            background: ${theme.color.neutral.gray.c};
+            // background: ${theme.color.neutral.gray.c};
             text-shadow: none;
-            color: inherit;
+          //  color: inherit;
             padding: 0.1em 0.3em 0.2em;
             border-radius: 0.1em;
+          }
+          :global(img) {
+            max-width: 100%;
+          }
+          :global(iframe) {
+            max-width: 100%;
           }
         }
 

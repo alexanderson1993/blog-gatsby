@@ -109,7 +109,6 @@ exports.createPages = ({ graphql, actions }) => {
           const next = index === 0 ? undefined : posts[index - 1].node;
           const prev = index === posts.length - 1 ? undefined : posts[index + 1].node;
           const source = node.fields.source;
-
           createPage({
             path: slug,
             component: postTemplate,

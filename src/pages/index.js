@@ -7,16 +7,9 @@ import Hero from "../components/Hero";
 import Seo from "../components/Seo";
 
 class IndexPage extends React.Component {
-  separator = React.createRef();
-
-  scrollToContent = e => {
-    this.separator.current.scrollIntoView({ block: "start", behavior: "smooth" });
-  };
-
   render() {
     const {
       data: {
-        posts: { edges: posts = [] },
         bgDesktop: {
           resize: { src: desktop }
         },
@@ -41,15 +34,7 @@ class IndexPage extends React.Component {
     return (
       <React.Fragment>
         <ThemeContext.Consumer>
-          {theme => (
-            <Hero scrollToContent={this.scrollToContent} backgrounds={backgrounds} theme={theme} />
-          )}
-        </ThemeContext.Consumer>
-
-        <hr ref={this.separator} />
-
-        <ThemeContext.Consumer>
-          {theme => <Blog posts={posts} theme={theme} />}
+          {theme => <Hero backgrounds={backgrounds} theme={theme} />}
         </ThemeContext.Consumer>
 
         <Seo facebook={facebook} />
@@ -74,34 +59,6 @@ export default IndexPage;
 //eslint-disable-next-line no-undef
 export const query = graphql`
   query IndexQuery {
-    posts: allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "//posts/[0-9]+.*--/" } }
-      sort: { fields: [fields___prefix], order: DESC }
-    ) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-            prefix
-          }
-          frontmatter {
-            title
-            category
-            author
-            cover {
-              children {
-                ... on ImageSharp {
-                  fluid(maxWidth: 800, maxHeight: 360) {
-                    ...GatsbyImageSharpFluid_withWebp
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
     site {
       siteMetadata {
         facebook {

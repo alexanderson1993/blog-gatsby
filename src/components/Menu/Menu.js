@@ -2,11 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 require("core-js/fn/array/from");
 
-import { FaHome } from "react-icons/fa/";
-import { FaSearch } from "react-icons/fa/";
-import { FaEnvelope } from "react-icons/fa/";
-import { FaTag } from "react-icons/fa/";
-
 import Item from "./Item";
 import Expand from "./Expand";
 
@@ -23,11 +18,12 @@ class Menu extends React.Component {
     }));
 
     this.items = [
-      { to: "/", label: "Home", icon: FaHome },
-      { to: "/category/", label: "Categories", icon: FaTag },
-      { to: "/search/", label: "Search", icon: FaSearch },
+      { to: "/", label: "Home" },
+      { to: "/blog/", label: "Blog" },
+      { to: "/category/", label: "Categories" },
+      { to: "/search/", label: "Search" },
       ...pages,
-      { to: "/contact/", label: "Contact", icon: FaEnvelope }
+      { to: "/contact/", label: "Contact" }
     ];
 
     this.renderedItems = []; // will contain references to rendered DOM elements of menu
@@ -42,7 +38,6 @@ class Menu extends React.Component {
     path: PropTypes.string.isRequired,
     fixed: PropTypes.bool.isRequired,
     screenWidth: PropTypes.number.isRequired,
-    fontLoaded: PropTypes.bool.isRequired,
     pages: PropTypes.array.isRequired,
     theme: PropTypes.object.isRequired
   };
@@ -55,8 +50,7 @@ class Menu extends React.Component {
     if (
       this.props.path !== prevProps.path ||
       this.props.fixed !== prevProps.fixed ||
-      this.props.screenWidth !== prevProps.screenWidth ||
-      this.props.fontLoaded !== prevProps.fontLoaded
+      this.props.screenWidth !== prevProps.screenWidth
     ) {
       if (this.props.path !== prevProps.path) {
         this.closeMenu();
@@ -147,18 +141,17 @@ class Menu extends React.Component {
         <nav className={`menu ${open ? "open" : ""}`} rel="js-menu">
           <ul className="itemList" ref={this.itemList}>
             {this.items.map(item => (
-              <Item item={item} key={item.label} icon={item.icon} theme={theme} />
+              <Item item={item} key={item.label} theme={theme} />
             ))}
           </ul>
           {this.state.hiddenItems.length > 0 && <Expand onClick={this.toggleMenu} theme={theme} />}
-          {open &&
-            screenWidth >= 1024 && (
-              <ul className="hiddenItemList">
-                {this.state.hiddenItems.map(item => (
-                  <Item item={item} key={item.label} hiddenItem theme={theme} />
-                ))}
-              </ul>
-            )}
+          {open && screenWidth >= 1024 && (
+            <ul className="hiddenItemList">
+              {this.state.hiddenItems.map(item => (
+                <Item item={item} key={item.label} hiddenItem theme={theme} />
+              ))}
+            </ul>
+          )}
         </nav>
 
         {/* --- STYLES --- */}
