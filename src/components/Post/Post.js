@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "prismjs/themes/prism-okaidia.css";
+import TalkyardCommentsIframe from "@debiki/gatsby-plugin-talkyard";
 
 import asyncComponent from "../AsyncComponent";
 import Headline from "../Article/Headline";
@@ -43,6 +44,7 @@ const Post = props => {
         <Share post={post} theme={theme} />
         <Author note={authornote} theme={theme} />
         <NextPrev next={nextPost} prev={prevPost} theme={theme} />
+        <TalkyardCommentsIframe discussionId={slug} />
       </footer>
     </React.Fragment>
   );

@@ -97,7 +97,6 @@ const Hero = props => {
 };
 
 Hero.propTypes = {
-  scrollToContent: PropTypes.func.isRequired,
   backgrounds: PropTypes.object.isRequired,
   theme: PropTypes.object.isRequired
 };

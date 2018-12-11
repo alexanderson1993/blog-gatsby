@@ -253,6 +253,12 @@ module.exports = {
       }
     },
     {
+      resolve: `@debiki/gatsby-plugin-talkyard`,
+      options: {
+        talkyardServerUrl: "https://comments-for-ralexanderson-com.talkyard.io"
+      }
+    },
+    {
       resolve: `gatsby-plugin-sitemap`
     },
     {

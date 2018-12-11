@@ -4,6 +4,7 @@
   "author": "Alex Anderson <alexanderson1993@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@debiki/gatsby-plugin-talkyard": "^0.5.7",
     "antd": "^3.7.0",
     "fontfaceobserver": "^2.0.13",
     "gatsby": "^2.0.21",
