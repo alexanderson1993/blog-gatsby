@@ -5,7 +5,7 @@ category: "JavaScript"
 cover: hero.jpg
 ---
 
-We all know that a Promise in JavaScript are ways to perform tasks or get data asynchronously. That is, the promise will do it's thing in the background and respond once some condition is met. That condition could be a network request coming back, or some long running process completing, or some other arbitrary thing. All that matters is that our promise will resolve... later.
+We all know that a Promise in JavaScript is a way to perform tasks or get data asynchronously. That is, the promise will do its thing in the background and respond once some condition is met. That condition could be a network request coming back, or some long running process completing, or some other arbitrary thing. All that matters is that our promise will resolve... later.
 
 Here's an example - say I have a promise that resolves after exactly two seconds using `setTimeout`:
 
