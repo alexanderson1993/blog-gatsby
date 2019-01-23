@@ -2,8 +2,10 @@
 title: "Double Promises"
 author: "Alex Anderson"
 category: "JavaScript"
-cover: hero.jpg
+cover: hero.jpeg
 ---
+
+![Hero](hero.jpeg)
 
 We all know that a Promise in JavaScript is a way to perform tasks or get data asynchronously. That is, the promise will do its thing in the background and respond once some condition is met. That condition could be a network request coming back, or some long running process completing, or some other arbitrary thing. All that matters is that our promise will resolve... later.
 
