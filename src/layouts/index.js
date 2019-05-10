@@ -54,7 +54,7 @@ class Layout extends React.Component {
     return (
       <StaticQuery
         query={graphql`
-          query LayoutgQuery {
+          query LayoutQuery {
             pages: allMarkdownRemark(
               filter: { fileAbsolutePath: { regex: "//pages//" }, fields: { prefix: { regex: "/^\\d+$/" } } }
               sort: { fields: [fields___prefix], order: ASC }
@@ -100,7 +100,7 @@ class Layout extends React.Component {
                   {/* --- STYLES --- */}
                   <style jsx>{`
                     main {
-                      min-height: 80vh;
+                      min-height: calc(100vh - 20px);
                     }
                   `}</style>
                   <style jsx global>{`

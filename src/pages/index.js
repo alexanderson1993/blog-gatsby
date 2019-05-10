@@ -10,32 +10,15 @@ class IndexPage extends React.Component {
   render() {
     const {
       data: {
-        bgDesktop: {
-          resize: { src: desktop }
-        },
-        bgTablet: {
-          resize: { src: tablet }
-        },
-        bgMobile: {
-          resize: { src: mobile }
-        },
         site: {
           siteMetadata: { facebook }
         }
       }
     } = this.props;
 
-    const backgrounds = {
-      desktop,
-      tablet,
-      mobile
-    };
-
     return (
       <React.Fragment>
-        <ThemeContext.Consumer>
-          {theme => <Hero backgrounds={backgrounds} theme={theme} />}
-        </ThemeContext.Consumer>
+        <ThemeContext.Consumer>{theme => <Hero theme={theme} />}</ThemeContext.Consumer>
 
         <Seo facebook={facebook} />
 
@@ -64,21 +47,6 @@ export const query = graphql`
         facebook {
           appId
         }
-      }
-    }
-    bgDesktop: imageSharp(fluid: { originalName: { regex: "/hero-background/" } }) {
-      resize(width: 1200, quality: 90, cropFocus: CENTER) {
-        src
-      }
-    }
-    bgTablet: imageSharp(fluid: { originalName: { regex: "/hero-background/" } }) {
-      resize(width: 800, height: 1100, quality: 90, cropFocus: CENTER) {
-        src
-      }
-    }
-    bgMobile: imageSharp(fluid: { originalName: { regex: "/hero-background/" } }) {
-      resize(width: 450, height: 850, quality: 90, cropFocus: CENTER) {
-        src
       }
     }
   }
