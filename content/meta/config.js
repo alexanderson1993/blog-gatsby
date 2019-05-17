@@ -1,10 +1,10 @@
 module.exports = {
   siteTitle: "R. Alex Anderson", // <title>
   shortSiteTitle: "R. Alex Anderson", // <title> ending for posts and pages
-  siteDescription: "Web Developer - Hobby Chef - Family Man",
+  siteDescription: "Web Developer - Hobby Chef - Truth Seeker",
   siteUrl: "https://ralexanderson.com",
   // pathPrefix: "",
-  siteImage: "preview.jpg",
+  siteImage: "avatar.jpg",
   siteLanguage: "en",
 
   /* author */

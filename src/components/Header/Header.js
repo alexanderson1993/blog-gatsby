@@ -11,7 +11,8 @@ import avatar from "../../images/jpg/avatar.jpg";
 
 class Header extends React.Component {
   state = {
-    fixed: false
+    fixed: false,
+    open: false
   };
 
   visibilitySensorChange = val => {
@@ -31,7 +32,7 @@ class Header extends React.Component {
 
   render() {
     const { pages, path, theme } = this.props;
-    const { fixed } = this.state;
+    const { fixed, open } = this.state;
 
     return (
       <React.Fragment>
@@ -45,9 +46,20 @@ class Header extends React.Component {
               <h2>{config.headerSubTitle}</h2>
             </div>
           </Link>
+          <button className="open-holder" onClick={() => this.setState({ open: !open })}>
+            <div className="open" />
+          </button>
           <ScreenWidthContext.Consumer>
             {width => (
-              <Menu path={path} fixed={fixed} screenWidth={width} pages={pages} theme={theme} />
+              <Menu
+                path={path}
+                fixed={fixed}
+                screenWidth={width}
+                pages={pages}
+                theme={theme}
+                open={open}
+                close={() => this.setState({ open: false })}
+              />
             )}
           </ScreenWidthContext.Consumer>
         </header>
@@ -118,7 +130,33 @@ class Header extends React.Component {
               width: 100%;
             }
           }
-
+          .open-holder {
+            position: absolute;
+            right: 20px;
+            margin: 0 10px;
+            padding: 4px;
+            border-radius: 2px;
+            border: solid 2px rgba(191, 191, 191, 1);
+            background-color: transparent;
+          }
+          .open {
+            height: 15px;
+            width: 15px;
+            border: none;
+            background: linear-gradient(
+              to bottom,
+              rgba(191, 191, 191, 1) 0%,
+              rgba(191, 191, 191, 1) 10%,
+              rgba(191, 191, 191, 0) 10.0001%,
+              rgba(191, 191, 191, 0) 44.9999%,
+              rgba(191, 191, 191, 1) 45%,
+              rgba(191, 191, 191, 1) 55%,
+              rgba(191, 191, 191, 0) 55.0001%,
+              rgba(191, 191, 191, 0) 89.9999%,
+              rgba(191, 191, 191, 1) 90%,
+              rgba(191, 191, 191, 1) 100%
+            );
+          }
           .sensor {
             display: block;
             position: absolute;

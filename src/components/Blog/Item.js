@@ -23,7 +23,7 @@ const Item = props => {
   return (
     <React.Fragment>
       <li>
-        <Link to={slug} key={slug} className="link">
+        <Link to={`/blog/${slug}`} key={slug} className="link">
           {fluid && (
             <div className="gatsby-image-outer-wrapper">
               <Img fluid={fluid} />

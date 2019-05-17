@@ -12,8 +12,11 @@ const Seo = props => {
 
   const title = postTitle ? `${postTitle} - ${config.shortSiteTitle}` : config.siteTitle;
   const description = postDescription ? postDescription : config.siteDescription;
-  const image = postCover ? postCover : config.siteImage;
-  const url = config.siteUrl + config.pathPrefix + postSlug;
+  const image = postCover
+    ? config.siteUrl + postCover.childImageSharp.resize.src
+    : config.siteUrl + "/" + config.siteImage;
+  const url = config.siteUrl + (config.pathPrefix || "") + (postSlug || "");
+  console.log(config.siteUrl, config.pathPrefix || "", postSlug || "", url, image);
   return (
     <Helmet
       htmlAttributes={{

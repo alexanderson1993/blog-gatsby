@@ -1,5 +1,5 @@
 ---
-title: "I Promise you'll like this"
+title: "Promise Fu"
 author: "Alex Anderson"
 category: "JavaScript"
 cover: hero.jpeg
