@@ -7,7 +7,7 @@ cover: hero.jpeg
 
 ![Hero](hero.jpeg)
 
-If you aren't familiar with promises, be sure to check out [my earlier post on the topic](/i-promise-youll-like-this/). In this post, I'll be talking about some interesting, unique, and downright weird things you can do with promises.
+If you aren't familiar with promises, be sure to check out [my earlier post on the topic](/blog/i-promise-youll-like-this/). In this post, I'll be talking about some interesting, unique, and downright weird things you can do with promises.
 
 ## Regular Promises
 
