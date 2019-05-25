@@ -131,6 +131,7 @@ class Header extends React.Component {
             }
           }
           .open-holder {
+            display: none;
             position: absolute;
             right: 20px;
             margin: 0 10px;
@@ -179,6 +180,9 @@ class Header extends React.Component {
           }
 
           @below desktop {
+            .open-holder {
+              display: block;
+            }
             .header.homepage {
               .logo {
                 border: none;

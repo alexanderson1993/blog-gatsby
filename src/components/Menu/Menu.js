@@ -94,7 +94,7 @@ class Menu extends React.Component {
             position: relative;
             width: 100%;
           }
-
+          
           @below desktop {
             .menu {
               height: 100vh;
