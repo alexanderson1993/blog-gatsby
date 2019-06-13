@@ -7,7 +7,7 @@ const Hit = props => {
 
   return (
     <React.Fragment>
-      <Link to={hit.slug}>{hit.title}</Link>
+      <Link to={`/blog${hit.slug}`}>{hit.title}</Link>
 
       {/* --- STYLES --- */}
       <style jsx global>{`

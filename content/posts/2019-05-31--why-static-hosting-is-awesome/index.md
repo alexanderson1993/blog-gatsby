@@ -19,7 +19,7 @@ Yep, that's right. It's free. How can I get away with it? Three things:
 2. I run all of my websites on static file hosts, which have a very generous free tier.
 3. I run all of my server-side code as serverless functions on providers that have very generous free tiers.
 
-Today's post will focus on the second item in that list. A future post will cover serverless functions.
+Today's post will focus on the second item in that list. A [future post](/blog/serverless) will cover serverless functions.
 
 ## What is Static Hosting?
 
